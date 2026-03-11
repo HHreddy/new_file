@@ -79,7 +79,7 @@ function Login() {
       {/* Forgot Password Form */}
       {showForgot && (
         <div>
-          <h3>Reset Password</h3>
+          <h3>create New Password</h3>
 
           <input
             type="email"
