@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { greetUser } from "./utils/helper";
 
 function Login() {
 
@@ -23,7 +24,9 @@ function Login() {
     });
 
     const data = await response.json();
-    setMessage(data.message);
+
+    const greeting = greetUser(username);
+    setMessage(data.message + " " + greeting);
   };
 
 
@@ -52,7 +55,7 @@ function Login() {
       <form onSubmit={handleLogin}>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Username or Enter your fullname"
           onChange={(e)=>setUsername(e.target.value)}
         />
         <br/><br/>
